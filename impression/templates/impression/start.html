@@ -1,0 +1,10 @@
+{% extends 'impression/base.html' %}
+{% load static %}
+
+{% block content %}
+<form action="" method="POST" >
+    <p>スタートボタンを押してください</p>
+    {% csrf_token %}
+    <button type="submit">start</button>
+</form>
+{% endblock %}

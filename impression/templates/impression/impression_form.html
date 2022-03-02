@@ -1,0 +1,16 @@
+{% extends 'impression/base.html' %}
+{% load static %}
+
+{% block content %}
+<form action="" method="POST">
+    <p>基本情報を入力してください．</p>
+    {{ form.name.label }}
+    {{ form.name }}<br>
+    {{ form.age.label }}
+    {{ form.age }}<br>
+    {{ form.gender.label }}
+    {{ form.gender }}<br>
+    {% csrf_token %}
+   <button type="submit">次へ</button>
+</form>
+{% endblock %}

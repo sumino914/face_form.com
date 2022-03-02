@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+}
+
+.video_frame{
+    display: inline-block;
+    text-align: center;
+}
+
+table{
+    text-align: center;
+}

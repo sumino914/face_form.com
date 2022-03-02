@@ -1,0 +1,27 @@
+{% extends 'impression/base.html' %}
+{% load static %}
+
+{% block content %}
+<form action="" method="POST">
+    <p>[1]~[4]それぞれに表示されている5つの動画のうち，最も印象が良いものを選んでください．</p>
+    {{ form.pattern1.label }}
+    <br>
+    <table>
+        <tr>
+            <td><video src="{% static '/impression/smile/00.mp4' %}"  loop autoplay muted width="150px" height="150px"></video></td>
+            <td><video src="{% static '/impression/smile/25 (1).mp4' %}" loop autoplay muted width="150px" height="150px"></video></td>
+            <td><video src="{% static '/impression/smile/50 (1).mp4' %}" loop autoplay muted width="150px" height="150px"></video></td>
+            <td><video src="{% static '/impression/smile/75 .mp4' %}" loop autoplay muted width="150px" height="150px"></video></td>
+            <td><video src="{% static '/impression/smile/100 .mp4' %}" loop autoplay muted width="150px" height="150px"></video></td>
+        </tr>
+        <tr>
+    {% for number in form.pattern1 %}
+        <td>{{number}}</td>
+    {% endfor %}
+        </tr>
+    </table><br>
+    {% csrf_token %}
+    
+   <button type="submit">次へ</button>
+</form>
+{% endblock %}

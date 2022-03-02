@@ -1,0 +1,25 @@
+{% extends 'impression/base.html' %}
+{% load static %}
+
+{% block content %}
+<form action="" method="POST">
+    {{ form.pattern2.label }}
+    <table>
+        <tr>
+            <td><video src="{% static '/impression/eye/-100 .mp4' %}"  loop autoplay muted width="150px" height="150px"></video></td>
+            <td><video src="{% static '/impression/eye/-50 .mp4' %}" loop autoplay muted width="150px" height="150px"></video></td>
+            <td><video src="{% static '/impression/eye/00.mp4' %}" loop autoplay muted width="150px" height="150px"></video></td>
+            <td><video src="{% static '/impression/eye/50 .mp4' %}" loop autoplay muted width="150px" height="150px"></video></td>
+            <td><video src="{% static '/impression/eye/100 .mp4' %}" loop autoplay muted width="150px" height="150px"></video></td>
+        </tr>
+        <tr>
+    {% for number in form.pattern2 %}
+        <td>{{number}}</td>
+    {% endfor %}
+        </tr>
+    </table><br>
+    {% csrf_token %}
+
+    <button type="submit">送信</button>
+</form>
+{% endblock %}
